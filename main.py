@@ -5,7 +5,7 @@ import subprocess
 
 mem = psutil.virtual_memory()
 disk = psutil.disk_usage("/")
-os_info = platform.freedesktop_os_release()
+GB = 1024**3 # converts bytes into gb
 
 def show_os():
     info = platform.freedesktop_os_release()
@@ -24,16 +24,16 @@ def show_cpu_usage():
     print("CPU usage:", psutil.cpu_percent(interval=1), "%")
 
 def show_total_ram():
-    print("Total RAM:", round(mem.total / 1024**3, 2), "GB") # converts bytes (B) to gigabytes (GB)
+    print("Total RAM:", round(mem.total / GB, 2), "GB") # converts bytes (B) to gigabytes (GB)
 
 def show_used_ram():
-    print("Used RAM:", round(mem.used / 1024**3, 2), "GB") # converts bytes (B) to gigabytes (GB)
+    print("Used RAM:", round(mem.used / GB, 2), "GB") # converts bytes (B) to gigabytes (GB)
 
 def show_disk_total():
-    print("Disk total:", round(disk.total / 1024**3, 2), "GB") # converts bytes (B) to gigabytes (GB)
+    print("Disk total:", round(disk.total / GB, 2), "GB") # converts bytes (B) to gigabytes (GB)
 
 def show_disk_free():
-    print("Disk free:", round(disk.free / 1024**3, 2), "GB") # converts bytes (B) to gigabytes (GB)
+    print("Disk free:", round(disk.free / GB, 2), "GB") # converts bytes (B) to gigabytes (GB)
 
 def get_cpu_name():
     with open("/proc/cpuinfo") as f:

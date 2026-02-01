@@ -12,8 +12,8 @@ hwpeek is a simple Linux CLI tool that displays basic system hardware and OS inf
 ## Dependencies
 
 ```bash
-pip install `psutil`
-sudo apt install `pciutils`
+pip install psutil
+sudo apt install pciutils
 ```
 ### If pip fails:
 

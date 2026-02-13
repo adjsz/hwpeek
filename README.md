@@ -4,7 +4,7 @@ hwpeek is a simple Linux CLI tool that displays basic system hardware and OS inf
 
 ## Installation
 
-# Install via APT
+### Install via APT
 
 Add the repository:
 
@@ -12,3 +12,8 @@ Add the repository:
 echo "deb [trusted=yes] https://adjsz.github.io/hwpeek ./" | sudo tee /etc/apt/sources.list.d/hwpeek.list
 sudo apt update
 sudo apt install hwpeek
+```
+
+### Note:
+
+This tool is only compatible with Linux because it relies on the command `lspci` for the GPU name as well as the Linux-specific virtual file `/proc/cpuinfo` to detect the CPU.

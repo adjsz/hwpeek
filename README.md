@@ -4,6 +4,14 @@ hwpeek is a simple Linux CLI tool that displays basic system hardware and OS inf
 
 ## Installation
 
+### Install locally
+
+```bash
+git clone https://github.com/adjsz/hwpeek.git
+cd hwpeek
+python3 hwpeek
+```
+
 ### Install via APT
 
 Add the repository:

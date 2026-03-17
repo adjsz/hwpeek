@@ -6,7 +6,6 @@ import getpass
 
 username = getpass.getuser()
 hostname = socket.gethostname()
-
 info = platform.freedesktop_os_release()
 kernel_version = platform.release()
 architecture = platform.machine()
@@ -15,6 +14,7 @@ disk = psutil.disk_usage("/")
 logical_cores = psutil.cpu_count(logical=True)
 physical_cores = psutil.cpu_count(logical=False)
 cpu_usage = psutil.cpu_percent(interval=1)
+temps = psutil.sensors_temperatures()
 GB = 1024**3 # converts bytes into gb
 
 
@@ -68,7 +68,7 @@ def get_gpu_name():
             if "VGA" in line or "3D controller" in line:
                 return line.split(":", 1)[1].strip()
     except FileNotFoundError:
-        return "Error: lspci not found"
+        return "Error: lspci not found, this tool is only meant for Linux systems"
     return "GPU not found"
 
 def show_gpu():
